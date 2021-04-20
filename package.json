@@ -1,12 +1,19 @@
 {
-  "name": "mypackage",
-  "version": "0.7.0",
-  "type": "module",
-  "description": "Sample package",
+  "name": "compilermatching",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "node ./matching.test.js"
+    "test": "mocha"
   },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "test": ">=0.0.5"
+    "mocha": "^8.3.2"
+  },
+  "dependencies": {
+    "ohm-js": "^15.5.0"
   }
 }
