@@ -1,0 +1,12 @@
+{
+  "name": "mypackage",
+  "version": "0.7.0",
+  "type": "module",
+  "description": "Sample package",
+  "scripts": {
+    "test": "node ./matching.test.js"
+  },
+  "devDependencies": {
+    "test": ">=0.0.5"
+  }
+}
