@@ -13,8 +13,7 @@ const grammars = {
   x = d d d d d d d d d d d d
   d = "0".."9"`,
   adaFloat: `\d+[#|e|E|.|_|\-|fD|\+|\d]*`,
-  notThreeEndingInOO: `a = end | i 
-  i = ( d (b | c | e | f | g | h)? )
+  notThreeEndingInOO: `a = ( d (b | c | e | f | g | h)? )?
   b = d ("A".."N" | "P".."Z")
   c = d ("a".."n" | "p".."z") 
   e = ("A".."N" | "P".."Z") d
@@ -28,8 +27,13 @@ const grammars = {
     s = "8".."9"
     d = "1".."2" "0".."9"`,
   mLComment: `a = "(*" " "? ((~("*)" end) alnum | ~("*)" end) "*" | ~("*)" end) "(*")+) " "? "*)"`,
-  notDogDoorDenNoLookAround: `(dog[a-z]+)|(den[a-z]+)|(door[a-z]+)|[a-ce-zA-Z]\w*`,
-  notDogDoorDenWithLookAround: `(?!(dog|door|den)\b)\b\w+`
+  notDogDoorDenNoLookAround: `n = ("dog" | "door" | "den") ("A".."Z" | "a".."z")+ 
+  | "doo" ("A".."Z" | "a".."q" | "t".."z" )*
+  | "do" ("A".."Z" | "a".."f" | "h".."n" | "q".."z")*
+  | "de" ("A".."Z" | "a".."m" | "o".."z" )*
+  | "d" ("A".."Z" | "a".."d" | "f".."n" | "p".."z" )*
+  | ("A".."Z" | "a".."c" | "e".."z" )(("A".."Z" | "a".."z" )*)?`,
+  notDogDoorDenWithLookAround: `nond = ~(("dog" | "door" | "den") end) ("A".."Z" | "a".."z")*`
 };
 
 export function matches(name, string) {

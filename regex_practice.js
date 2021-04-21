@@ -7,8 +7,8 @@ const regexes = {
   divisibleBy64: /^([0|1]*000000)|(0+)$/,
   eightThroughTwentyNine: /^[8-9]|[1-2][0-9]\b$/,
   mLComment: /^\(\*[\d\*\( ]*\*\)$/,
-  notDogDoorDenNoLookAround: /^(dog[a-z]+)|(den[a-z]+)|(door[a-z]+)|[a-ce-zA-Z]\w*$/,
-  notDogDoorDenWithLookAround: /^(?!(dog|door|den)\b)\b\w+$/
+  notDogDoorDenNoLookAround: /^((dog[a-z]+)|(den[a-z]+)|(door[a-z]+)|[a-ce-zA-Z]\w*)?$/,
+  notDogDoorDenWithLookAround: /^((?!(dog|door|den)\b)\b\w+)?$/
 };
 
 export function matches(name, string) {
