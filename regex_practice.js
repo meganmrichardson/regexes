@@ -1,9 +1,9 @@
 const regexes = {
   canadianPostalCode: /^([^DFIOQUa-z]|\d){3}[ ]([^DFIOQUa-z]|\d){3}$/,
-  visa: /^4\d{15}$/,
-  masterCard: /^5[1-5]\d{14}|[2221-2720]\d{15}$/,
-  adaFloat: /^\d+[#|e|E|.|_|\-|fD|\+|\d]*$/,
-  notThreeEndingInOO: /^(?!([a-zA-Z][oO]{2})\b)\b[a-zA-Z]+$/,
+  visa: /^4((\d{15})|(\d{12}))$/,
+  masterCard: /^((5[1-5])|(2[221-720]))\d{14}$/,
+  adaFloat: /^\d+([#|e|E|.|_|\-|fD|\+|\d]+\d)*([#|\d]?)$/,
+  notThreeEndingInOO: /^($^)|((?!([a-zA-Z][oO]{2})\b)\b[a-zA-Z]+)$/,
   divisibleBy64: /^([0|1]*000000)|(0+)$/,
   eightThroughTwentyNine: /^[8-9]|[1-2][0-9]\b$/,
   mLComment: /^\(\*[\d\*\( ]*\*\)$/,
